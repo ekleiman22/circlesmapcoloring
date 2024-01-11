@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="js/operations.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* 100% viewport height */
+        }
+
+        #upper-panel {
+            flex: 0 0 3%; /* 5% height, do not grow or shrink */
+        }
+
+        #bottom-panel {
+            flex: 1; /* Take remaining height */
+            display: flex;
+            flex-direction: row;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="upper-panel" style="font-size:smaller">
+        <h3 style="text-align:center">Color circles</h3>
+        <p>
+            There are circles drawn on the plane. It is known
+            that the map formed by them can be correctly colored
+            two colors. An algorithm for such coloring has been implemented.
+        </p>
+        <table cellpadding="10" >
+            <tr>
+                <td>
+                    <input id="btnGenerat" type="button" value="Generate and color circles"
+                           onclick="generate()" />
+                </td>
+                <td>
+                    Circles count: &nbsp;
+                    <input id="txtCount" type="text" value="10" style="width:20px" />
+                </td>
+                <td>
+                    First color:
+                    <input type="color" id="color1"  value="#ff0000">
+                </td>
+                <td>
+                    Second color:
+                    <input type="color" id="color2"  value="#0000ff">
+                </td>
+                <td>
+                    <input id="btnClear" type="button" value="Clear" onclick="clearAll()"/>
+                </td>
+            </tr>
+        </table>
+       
+
+    </div>
+    <div id="bottom-panel" style="border:double">
+        <canvas id="pnlCanvas" width="1200" height="500"></canvas>
+    </div>
+</body>
+</html>
